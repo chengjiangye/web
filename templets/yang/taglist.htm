@@ -1,0 +1,100 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="gb2312">
+<title>{dede:field.title/}_{dede:global.cfg_webname/}</title>
+<meta name="keywords" content="{dede:global.cfg_keywords/}" />
+<meta name="description" content="{dede:field name='description' function='html2text(@me)'/}" />
+<link href="{dede:global.cfg_templets_skin/}/style/base.css" rel="stylesheet">
+<link href="{dede:global.cfg_templets_skin/}/style/main.css" rel="stylesheet">
+<!--[if lt IE 9]>
+<script src="{dede:global.cfg_templets_skin/}/js/modernizr.js"></script>
+<![endif]-->
+</head>
+<body>
+{dede:include filename='head.htm' /}
+<article>
+<div class="newlist">
+  <h2><span>
+      {dede:channel type='son'}
+         <a href='[field:typeurl/]'>[field:typename/]</a>
+       {/dede:channel}
+</span>您当前的位置：<a href="{dede:global.cfg_cmsurl/}/">主页</a> > <a href='/tags/'>TAG标签</a> > {dede:field.title /} </h2>
+     <ul>{dede:list pagesize='10'}
+		<p class="ptit"><b><a href="[field:arcurl/]" title="[field:fulltitle/]"  target="_blank">[field:title/]</a></b></p>
+	   <p class="ptime">发布时间：[field:pubdate function=MyDate('y-m-d',@me)/] 作者：[field:writer /] 分类：[field:typelink/]</p>
+<a href="[field:arcurl/]" target="_blank" title="[field:fulltitle/]"><img src="[field:picname/]" class="imgdow" alt="[field:fulltitle/]"></a>
+	   <p class="pcon">[field:description/]<a href="[field:arcurl/]" target="_blank" title="[field:fulltitle/]">详细信息</a></P>
+	   <div class="line"></div>
+    {/dede:list}
+  </ul>
+<div class="ad">
+</div>
+      <div class="page">{dede:pagelist listsize='3' listitem='index pre pageno next end '/} </div>
+</div>
+<div class="boxr"> 
+
+<gcse:search></gcse:search>
+   <div class="newbolg">
+       <h2>栏目更新</h2>
+      <ul>
+      	{dede:arclist row=10 titlelen=32 }
+		 <li><a href="[field:arcurl/]" title="[field:fulltitle/]" target="_blank">[field:title/]</a></li>
+         {/dede:arclist}
+       </ul>        
+    </div>    
+   <div class="newbolg">
+       <h2>栏目热门</h2>
+      	<ul>
+      	{dede:arclist sort='hot'  orderby='click' row='10' titlelen='42'  }
+		 <li><a href="[field:arcurl/]" title="[field:fulltitle/]" target="_blank">[field:title/]</a></li>
+         {/dede:arclist}
+  		</ul>        
+    </div> 
+     <div class="visitors">
+      <h2>最近访客</h2>
+      <ul class="ds-recent-visitors"  data-num-items="21"></ul>
+    </div>
+   <div class="hotcomm">
+       <h2>热评文章</h2>
+    <ul  class="ds-top-threads" data-range="weekly" data-num-items="6"></ul>
+    </div>  
+
+</article>
+<div id="copright">Design by DanceSmile  <a href="#" target="_blank">蜀ICP备00000000号-1</a><script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fca9c9aeca6d24b987c40c4c8ad091e42' type='text/javascript'%3E%3C/script%3E"));
+</script>
+ <script>
+  (function() {
+    var cx = '002891201595542229056:2ubp8esotrq';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<script language="javascript">
+var obj=null;
+var As=document.getElementById('nav').getElementsByTagName('a');
+obj = As[0];
+for(i=1;i<As.length;i++){if(window.location.href.indexOf(As[i].href)>=0)
+obj=As[i];}
+obj.id='nav_current'
+</script>
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"itbyc"};
+(function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = 'http://static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+})();
+</script>
+</div>{dede:php}include("./include/inc/r.php");{/dede:php}
+</body>
+</html>
